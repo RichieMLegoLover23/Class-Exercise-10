@@ -1,0 +1,54 @@
+class Employee:
+    def __init__(self, name, emp_num):
+        self.__name = name
+        self.__emp_num = emp_num
+        
+    def set_name(self, name):
+        self.__name = name
+        
+    def set_emp_num(self, emp_num):
+        self.__emp_num = emp_num
+        
+    def get_name(self):
+        return self.__name
+    
+    def get_emp_num(self):
+        return self.__emp_num
+
+class ProductionWorker(Employee):
+    def __init__(self, name, emp_num, shift_num, hourly_pay):
+        super().__init__(name, emp_num)
+        self.__shift_num = shift_num
+        self.__hourly_pay = hourly_pay
+        
+    def set_shift_num(self, shift_num):
+        self.__shift_num = shift_num
+        
+    def set_hourly_pay(self, hourly_pay):
+        self.__hourly_pay = hourly_pay
+        
+    def get_shift_num(self):
+        return self.__shift_num
+    
+    def get_hourly_pay(self):
+        return self.__hourly_pay
+
+# Create a production worker object
+prod_worker = ProductionWorker("", "", 0, 0.0)
+
+# Prompt the user to enter data for each data attribute
+name = input("Enter employee name: ")
+emp_num = input("Enter employee number: ")
+shift_num = int(input("Enter shift number (1 for day, 2 for night): "))
+hourly_pay = float(input("Enter hourly pay: "))
+
+prod_worker.set_name(name)
+prod_worker.set_emp_num(emp_num)
+prod_worker.set_shift_num(shift_num)
+prod_worker.set_hourly_pay(hourly_pay)
+
+# Display the data on screen
+print("Employee name:", prod_worker.get_name())
+print("Employee number:", prod_worker.get_emp_num())
+print("Shift number:", prod_worker.get_shift_num())
+print("Hourly pay:", prod_worker.get_hourly_pay())

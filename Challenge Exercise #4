@@ -1,0 +1,24 @@
+import vehicles
+
+def main():
+    used_car = vehicles.Automobiles('audi', 2022, 45000, 80000.0, 4)
+    new_car = vehicles.Automobiles('toyota', 2023, 15000, 30000.0, 2)
+
+    used_car.set_doors(2)
+    new_car.set_doors(4)
+
+    print('Used car:')
+    print('make:', used_car.get_make())
+    print('model:', used_car.get_model())
+    print('mileage:', used_car.get_mileage())
+    print('price:', used_car.get_price())
+    print('doors:', used_car.get_doors())
+
+    print('New car:')
+    print('make:', new_car.get_make())
+    print('model:', new_car.get_model())
+    print('mileage:', new_car.get_mileage())
+    print('price:', new_car.get_price())
+    print('doors:', new_car.get_doors())
+
+main()

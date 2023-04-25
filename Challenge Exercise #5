@@ -1,0 +1,75 @@
+class Insect:
+    def __init__(self, num_legs, wings):
+        self.num_legs = num_legs
+        self.wings = wings
+
+    def set_num_legs(self, num_legs):
+        self.num_legs = num_legs
+
+    def get_num_legs(self):
+        return self.num_legs
+
+    def set_wings(self, wings):
+        self.wings = wings
+
+    def get_wings(self):
+        return self.wings
+
+
+class Bumblebee(Insect):
+    def __init__(self, num_legs, wings, stinger, pollinator):
+        super().__init__(num_legs, wings)
+        self.stinger = stinger
+        self.pollinator = pollinator
+
+    def set_stinger(self, stinger):
+        self.stinger = stinger
+
+    def get_stinger(self):
+        return self.stinger
+
+    def set_pollinator(self, pollinator):
+        self.pollinator = pollinator
+
+    def get_pollinator(self):
+        return self.pollinator
+
+
+class Grasshopper(Insect):
+    def __init__(self, num_legs, wings, jump_distance, color):
+        super().__init__(num_legs, wings)
+        self.jump_distance = jump_distance
+        self.color = color
+
+    def set_jump_distance(self, jump_distance):
+        self.jump_distance = jump_distance
+
+    def get_jump_distance(self):
+        return self.jump_distance
+
+    def set_color(self, color):
+        self.color = color
+
+    def get_color(self):
+        return self.color
+
+
+# create a bumblebee
+bumblebee = Bumblebee(6, True, True, True)
+
+# set and get the characteristics of the bumblebee
+bumblebee.set_stinger(False)
+print("Bumblebee stinger:", bumblebee.get_stinger())
+
+bumblebee.set_pollinator(False)
+print("Bumblebee pollinator:", bumblebee.get_pollinator())
+
+# create a grasshopper
+grasshopper = Grasshopper(6, False, 2.5, "green")
+
+# set and get the characteristics of the grasshopper
+grasshopper.set_jump_distance(3.0)
+print("Grasshopper jump distance:", grasshopper.get_jump_distance())
+
+grasshopper.set_color("brown")
+print("Grasshopper color:", grasshopper.get_color())

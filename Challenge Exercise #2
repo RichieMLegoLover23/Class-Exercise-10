@@ -1,0 +1,31 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Student(Person):
+    def __init__(self, name, age, student_id, course, gpa, address, city, state, zipcode):
+        super().__init__(name, age)
+        self.student_id = student_id
+        self.course = course
+        self.gpa = gpa
+        self.address = address
+        self.city = city
+        self.state = state
+        self.zipcode = zipcode
+
+class Teacher(Person):
+    def __init__(self, name, age, teacher_id, course, address, city, state, zipcode):
+        super().__init__(name, age)
+        self.teacher_id = teacher_id
+        self.course = course
+        self.address = address
+        self.city = city
+        self.state = state
+        self.zipcode = zipcode
+
+jane = Student("Jane Smith", 18, "12345", "Math", 3.8, "123 Main St", "Anytown", "CA", "12345")
+john = Teacher("John Doe", 35, "54321", "English", "456 Oak St", "Othertown", "NY", "54321")
+
+print(f"{jane.name} is a student in the {jane.course} course with a GPA of {jane.gpa}. Their ID is {jane.student_id} and they live at {jane.address}, {jane.city}, {jane.state} {jane.zipcode}")
+print(f"{john.name} is a teacher of the {john.course} course. Their ID is {john.teacher_id} and they live at {john.address}, {john.city}, {john.state} {john.zipcode}")

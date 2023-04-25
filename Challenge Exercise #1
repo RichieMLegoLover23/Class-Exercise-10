@@ -1,0 +1,26 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+class Mammal(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        self.is_mammal = True
+
+class Bird(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        self.can_fly = True
+
+class Reptile(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        self.is_cold_blooded = True
+
+class Platypus(Mammal, Bird, Reptile):
+    def __init__(self, name):
+        super().__init__(name)
+        self.has_bill = True
+
+perry = Platypus("Perry")
+print(f"{perry.name} is a platypus that is a mammal, bird, and reptile. It has a bill: {perry.has_bill}, can fly: {perry.can_fly}, is a mammal: {perry.is_mammal}, and is cold-blooded: {perry.is_cold_blooded}")

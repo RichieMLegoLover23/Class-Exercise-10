@@ -1,0 +1,38 @@
+import vehicles
+
+class ElectricCar(vehicles.Automobiles):
+    def __init__(self, make, model, mileage, price, battery_range):
+        super().__init__(make, model, mileage, price)
+        self.__battery_range = battery_range
+
+    def get_battery_range(self):
+        return self.__battery_range
+
+    def set_battery_range(self, battery_range):
+        self.__battery_range = battery_range
+
+def main():
+    used_car = vehicles.Automobiles('audi', 2022, 45000, 80000.0)
+    new_car = vehicles.Automobiles('toyota', 2023, 15000, 30000.0)
+    electric_car = ElectricCar('Tesla', 'Model S', 0, 100000.0, 400)
+
+    print('Used car:')
+    print('make:', used_car.get_make())
+    print('model:', used_car.get_model())
+    print('mileage:', used_car.get_mileage())
+    print('price:', used_car.get_price())
+
+    print('New car:')
+    print('make:', new_car.get_make())
+    print('model:', new_car.get_model())
+    print('mileage:', new_car.get_mileage())
+    print('price:', new_car.get_price())
+
+    print('Electric car:')
+    print('make:', electric_car.get_make())
+    print('model:', electric_car.get_model())
+    print('mileage:', electric_car.get_mileage())
+    print('price:', electric_car.get_price())
+    print('battery range:', electric_car.get_battery_range())
+
+main()
